@@ -6,31 +6,31 @@ namespace ReceiptBasket.ViewModel
 {
     public class NewReceiptViewModel : ViewModelBase
     {
+        #region [ Logging ]
+
+        private static readonly log4net.ILog Log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        #endregion
+
         #region [ Constructors ]
 
         public NewReceiptViewModel()
         {
+            Optimize = true;
+            EnableContrast = true;
+            ContrastAmount = 95;
+
             PropertyChanged += NewReceiptViewModel_PropertyChanged;
         }
 
         #endregion
 
-        public void OpenImage(string fileName)
-        {
-            OriginalImage = Image.FromFile(fileName);
-        }
-
         #region [ Properties ]
 
         public Image ActiveImage
         {
-            get
-            {
-                if (Optimize)
-                    return OptimizedImage;
-
-                return OriginalImage;
-            }
+            get { return Optimize ? OptimizedImage : OriginalImage; }
         }
 
         public decimal? Amount { get; set; }
@@ -45,6 +45,11 @@ namespace ReceiptBasket.ViewModel
         #endregion
 
         #region [ Public Methods ]
+
+        public void OpenImage(string fileName)
+        {
+            OriginalImage = Image.FromFile(fileName);
+        }
 
         public void UpdateOptimizedImage()
         {
@@ -73,16 +78,14 @@ namespace ReceiptBasket.ViewModel
 
         private void NewReceiptViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
+            Log.DebugFormat("PropertyChanged: {0}", e.PropertyName);
+
             switch (e.PropertyName)
             {
+                case "Optimize":
                 case "OriginalImage":
-                case "OptimizeSetting":
                 case "EnableContrast":
-                case "EnableStraighten":
-                case "EnableAutoCrop":
-                case "EnableThreshold":
-                case "ThresholdSetting":
-                case "RotateSetting":
+                case "ContrastAmount":
                     UpdateOptimizedImage();
                     break;
             }

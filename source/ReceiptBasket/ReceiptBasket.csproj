@@ -113,6 +113,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiptViewModel.cs" />
+    <Compile Include="ViewHelper\FloatToIntConverter.cs" />
+    <Compile Include="ViewHelper\IntToStringConverter.cs" />
+    <Compile Include="ViewHelper\TelerikControlBindingHelper.cs" />
     <Compile Include="ViewModel\NewReceiptViewModel.cs" />
     <Compile Include="ViewModel\NotifyPropertyChangedBase.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />

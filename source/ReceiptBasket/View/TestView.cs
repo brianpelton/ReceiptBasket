@@ -20,7 +20,7 @@ namespace ReceiptBasket.View
 
         #region [ Properties ]
 
-        private BindingManager BindingManager { get; set; }
+        private BindingManager DataBindingManager { get; set; }
         private NewReceiptViewModel ViewModel { get; set; }
 
         #endregion
@@ -31,10 +31,18 @@ namespace ReceiptBasket.View
         {
             base.OnLoad(e);
 
-            BindingManager = new BindingManager();
+            DataBindingManager = new BindingManager();
 
-            imgViewer.BindData(BindingManager,
-                ViewModel, s => s.ActiveImage);
+            imgViewer.BindData(DataBindingManager,
+                ViewModel, s => s.ActiveImage,
+                mode: BindingMode.OneWayToTarget);
+
+            chkOptimize.BindData(DataBindingManager,
+                ViewModel, s => s.Optimize);
+
+            radTrackBar1.BindData(DataBindingManager,
+                ViewModel, s => s.ContrastAmount,
+                converter: FloatToIntConverter.Instance);
         }
 
         #endregion
