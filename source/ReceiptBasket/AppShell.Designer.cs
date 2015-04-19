@@ -37,6 +37,8 @@
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
+            this.cmdRenameFiles = new Telerik.WinControls.UI.RadButton();
+            this.radButton2 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
@@ -46,6 +48,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
             this.toolTabStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdRenameFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             this.SuspendLayout();
             // 
             // radCommandBar1
@@ -84,7 +88,7 @@
             // 
             // 
             // 
-            this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.radDock1.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.radDock1.Size = new System.Drawing.Size(784, 531);
             this.radDock1.TabIndex = 1;
             this.radDock1.TabStop = false;
@@ -93,8 +97,10 @@
             // toolWindow1
             // 
             this.toolWindow1.Caption = null;
+            this.toolWindow1.Controls.Add(this.cmdRenameFiles);
             this.toolWindow1.Controls.Add(this.cmdNewTestForm);
             this.toolWindow1.Controls.Add(this.radButton1);
+            this.toolWindow1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolWindow1.Location = new System.Drawing.Point(1, 24);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
@@ -128,7 +134,7 @@
             // 
             // 
             // 
-            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.toolTabStrip1.SelectedIndex = 0;
             this.toolTabStrip1.Size = new System.Drawing.Size(200, 521);
             this.toolTabStrip1.TabIndex = 1;
@@ -140,9 +146,26 @@
             // 
             // 
             // 
-            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
             this.documentContainer1.TabIndex = 2;
+            // 
+            // cmdRenameFiles
+            // 
+            this.cmdRenameFiles.Location = new System.Drawing.Point(6, 63);
+            this.cmdRenameFiles.Name = "cmdRenameFiles";
+            this.cmdRenameFiles.Size = new System.Drawing.Size(110, 24);
+            this.cmdRenameFiles.TabIndex = 2;
+            this.cmdRenameFiles.Text = "Rename Files";
+            this.cmdRenameFiles.Click += new System.EventHandler(this.radButton2_Click);
+            // 
+            // radButton2
+            // 
+            this.radButton2.Location = new System.Drawing.Point(6, 63);
+            this.radButton2.Name = "radButton2";
+            this.radButton2.Size = new System.Drawing.Size(110, 24);
+            this.radButton2.TabIndex = 2;
+            this.radButton2.Text = "New Test Form";
             // 
             // AppShell
             // 
@@ -163,6 +186,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
             this.toolTabStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdRenameFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +204,7 @@
         private Telerik.WinControls.UI.Docking.ToolTabStrip toolTabStrip1;
         private Telerik.WinControls.UI.Docking.DocumentContainer documentContainer1;
         private Telerik.WinControls.UI.RadButton cmdNewTestForm;
+        private Telerik.WinControls.UI.RadButton cmdRenameFiles;
+        private Telerik.WinControls.UI.RadButton radButton2;
     }
 }

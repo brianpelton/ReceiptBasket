@@ -29,5 +29,11 @@ namespace ReceiptBasket
         }
 
         #endregion
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            var f = new View.RenameFilesView { MdiParent = this };
+            f.Show();
+        }
     }
 }
